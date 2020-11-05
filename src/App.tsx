@@ -1,11 +1,12 @@
 import React from 'react';
 import { GlobalStyle } from './globalStyles';
+import WarpperApp from './components/WrapperApp';
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <p>klk</p>
+      <WarpperApp />
     </>
   );
 }
