@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import HeaderApp from '../HeaderApp'
+import Question from '../Question'
 
 const Warpper = styled.div`
  background: #2D2D2D;
@@ -8,14 +9,20 @@ const Warpper = styled.div`
  flex-direction: column;
  justify-content: center;
  align-items: center;
- height: 100vh;
  margin: 2rem 0;
+ padding: 1rem;
 `
 
 const WarpperApp = () => {
     return (
         <Warpper>
             <HeaderApp />
+            <Question />
+            <Question />
+            <Question />
+            <Question />
+            <Question />
+            <Question />            
         </Warpper>
     )
 };
