@@ -1,16 +1,16 @@
 import styled, { keyframes } from 'styled-components';
 import { FaPlus, FaTimes } from 'react-icons/fa';
 
-type QuestionAnswerP = {
+type FAQAnswerType = {
     isOpen: boolean;
 }
 
-export const QuestionContainer = styled.div`
+export const FAQContainer = styled.div`
   transition: all 0.4s ease;
   width: 60vw;
 `
 
-export const QuestionStatement = styled.button`
+export const FAQQuestion = styled.button`
  border: 2px solid #545454;
  font-size: clamp(1rem, 1.5vw, 2rem);
  color: #fff;
@@ -49,7 +49,7 @@ const slideDown = keyframes`
  }
 `
 
-export const QuestionAnswer = styled.p<QuestionAnswerP>`
+export const FAQAnswer = styled.p<FAQAnswerType>`
  padding: .75rem;
  color: #BBBBBB;
  word-spacing: 2px;

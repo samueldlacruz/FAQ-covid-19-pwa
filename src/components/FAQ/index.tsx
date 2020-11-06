@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { 
-    QuestionContainer, 
-    QuestionAnswer, 
-    QuestionStatement,
+    FAQContainer, 
+    FAQAnswer, 
+    FAQQuestion,
     Icon,
     SpanIcon,
     CloseIcon
-} from './QuestionElements';
+} from './FAQ.styles';
 
-const Question = () => {
+const FAQ = () => {
  const [isOpen, setIsOpen] = useState<boolean>(false);
 
  const toggle = () => {
@@ -18,18 +18,18 @@ const Question = () => {
  const icon = isOpen ? <CloseIcon /> : <SpanIcon />;
 
     return (
-        <QuestionContainer>
-            <QuestionStatement>
+        <FAQContainer>
+            <FAQQuestion>
                 how are you?
                 <Icon onClick={toggle}>{icon}</Icon>
-            </QuestionStatement>
-            <QuestionAnswer isOpen={isOpen}>
+            </FAQQuestion>
+            <FAQAnswer isOpen={isOpen}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quae accusantium illo praesentium consectetur aspern
                 repellat voluptatem, sit voluptates placeat!
-            </QuestionAnswer>
-        </QuestionContainer>
+            </FAQAnswer>
+        </FAQContainer>
     )
 }
 
-export default Question
+export default FAQ;

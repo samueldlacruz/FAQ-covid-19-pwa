@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Header = styled.header`
+const Heading = styled.header`
   font-size: clamp(1rem, 10vw, 2rem);
   text-transform: uppercase;
   font-weight: 700;
@@ -11,6 +11,6 @@ const Header = styled.header`
   word-spacing: 5px;
 `
 
-const HeaderApp = () => <Header>faq covi19</Header>;
+const Header = () => <Heading>faq covi19</Heading>;
 
-export default HeaderApp
+export default Header
