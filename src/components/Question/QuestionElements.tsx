@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { FaPlus, FaTimes } from 'react-icons/fa';
 
 type QuestionAnswerP = {
@@ -6,6 +6,7 @@ type QuestionAnswerP = {
 }
 
 export const QuestionContainer = styled.div`
+  transition: all 0.4s ease;
   width: 60vw;
 `
 
@@ -27,12 +28,34 @@ export const QuestionStatement = styled.button`
  font-weight: bold;
 `
 
+const slideDown = keyframes`
+ 0% {
+   transform: translateY(-90%)
+ }
+ 50% {
+   transform: translateY(8%)
+ }
+ 65% {
+   transform: translateY(-4%)
+ }
+ 80% {
+   transform: translateY(4%)
+ }
+ 95% {
+  transform: translateY(-2%)
+ }
+ 100% {
+   transform: translateY(0%)
+ }
+`
+
 export const QuestionAnswer = styled.p<QuestionAnswerP>`
  padding: .75rem;
  color: #BBBBBB;
  word-spacing: 2px;
  line-height: 1.75rem;
  display: ${({isOpen }) => (isOpen ? "block" : "none")};
+ animation: ${slideDown} 500ms ease;
 `
 
 export const SpanIcon = styled(FaPlus)`
