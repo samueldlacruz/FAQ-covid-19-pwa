@@ -6,7 +6,6 @@ import { Faq } from '../FAQ/types'
 import { getFAQs } from '../../services/FAQsServices'
 
 const Container = styled.div`
- /* background: #2D2D2D; */
  display: flex;
  flex-direction: column;
  justify-content: center;

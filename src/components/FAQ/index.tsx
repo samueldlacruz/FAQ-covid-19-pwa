@@ -5,7 +5,9 @@ import {
     FAQQuestion,
     Icon,
     SpanIcon,
-    CloseIcon
+    CloseIcon,
+    FAQCategory,
+    Flex
 } from './FAQ.styles';
 import { Faq } from './types';
 
@@ -16,7 +18,7 @@ type FAQProps = {
 } 
 
 const FAQ = ({ faq, toggleFAQ, index }: FAQProps) => {
-  const { question, answer, isOpen } = faq;
+  const { question, category, answer, isOpen } = faq;
 
   const icon = isOpen ? <CloseIcon /> : <SpanIcon />;
 
@@ -24,7 +26,10 @@ const FAQ = ({ faq, toggleFAQ, index }: FAQProps) => {
         <FAQContainer>
             <FAQQuestion>
                {question}
-                <Icon onClick={() => toggleFAQ(index)}>{icon}</Icon>
+               <Flex>
+                <FAQCategory>{category}</FAQCategory>
+                <Icon onClick={() => toggleFAQ(index)}>{icon}</Icon>                   
+               </Flex>
             </FAQQuestion>
             <FAQAnswer isOpen={isOpen}>
                 {answer}

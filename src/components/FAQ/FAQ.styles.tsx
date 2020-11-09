@@ -26,6 +26,10 @@ export const FAQQuestion = styled.button`
  margin-bottom: 1rem;
  text-align: left;
  font-weight: bold;
+
+ @media screen and (max-width: 700px) {
+   flex-direction: column;
+ }
 `
 
 const slideDown = keyframes`
@@ -48,6 +52,13 @@ const slideDown = keyframes`
    transform: translateY(0%)
  }
 `
+export const FAQCategory = styled.span`
+  background: #2D2D2D;
+  color: #fff;
+  border-radius: 5px;
+  font-size: clamp(1rem, .5vw, 1.5rem);
+  padding: 5px;
+`
 
 export const FAQAnswer = styled.p<FAQAnswerType>`
  padding: .75rem;
@@ -69,6 +80,16 @@ export const CloseIcon = styled(FaTimes)`
 export const Icon = styled.div`
  background: transparent;
  font-size: 1rem;
+ padding-left: 5px;
  cursor: pointer;
  outline: none;
+`
+export const Flex = styled.div`
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ @media screen and (max-width: 700px) {
+  margin-top: .75rem;
+ }
 `

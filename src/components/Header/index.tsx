@@ -11,6 +11,6 @@ const Heading = styled.header`
   word-spacing: 5px;
 `
 
-const Header = () => <Heading>faq covi19</Heading>;
+const Header = () => <Heading>faq covid-19</Heading>;
 
 export default Header
