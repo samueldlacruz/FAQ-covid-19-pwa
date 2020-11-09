@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
     FAQContainer, 
     FAQAnswer, 
@@ -7,26 +7,27 @@ import {
     SpanIcon,
     CloseIcon
 } from './FAQ.styles';
+import { Faq } from './types';
 
-const FAQ = () => {
- const [isOpen, setIsOpen] = useState<boolean>(false);
+type FAQProps = {
+    faq: Faq;
+    index: number;
+    toggleFAQ: Function;
+} 
 
- const toggle = () => {
-     setIsOpen(!isOpen)
- }
+const FAQ = ({ faq, toggleFAQ, index }: FAQProps) => {
+  const { question, answer, isOpen } = faq;
 
- const icon = isOpen ? <CloseIcon /> : <SpanIcon />;
+  const icon = isOpen ? <CloseIcon /> : <SpanIcon />;
 
     return (
         <FAQContainer>
             <FAQQuestion>
-                how are you?
-                <Icon onClick={toggle}>{icon}</Icon>
+               {question}
+                <Icon onClick={() => toggleFAQ(index)}>{icon}</Icon>
             </FAQQuestion>
             <FAQAnswer isOpen={isOpen}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quae accusantium illo praesentium consectetur aspern
-                repellat voluptatem, sit voluptates placeat!
+                {answer}
             </FAQAnswer>
         </FAQContainer>
     )
