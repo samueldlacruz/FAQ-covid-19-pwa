@@ -25,11 +25,11 @@ const FAQ = ({ faq, toggleFAQ, index }: FAQProps) => {
     return (
         <FAQContainer>
             <FAQQuestion>
-               {question}
                <Flex>
-                <FAQCategory>{category}</FAQCategory>
-                <Icon onClick={() => toggleFAQ(index)}>{icon}</Icon>                   
+                {question}
+                <FAQCategory>{category}</FAQCategory>               
                </Flex>
+               <Icon onClick={() => toggleFAQ(index)}>{icon}</Icon>    
             </FAQQuestion>
             <FAQAnswer isOpen={isOpen}>
                 {answer}

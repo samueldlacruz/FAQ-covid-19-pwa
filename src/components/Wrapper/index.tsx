@@ -4,6 +4,7 @@ import Header from '../Header'
 import FAQ from '../FAQ'
 import { Faq } from '../FAQ/types'
 import { getFAQs } from '../../services/FAQsServices'
+import Footer from '../Footer'
 
 const Container = styled.div`
  display: flex;
@@ -59,7 +60,8 @@ const Wrapper = () => {
                 index={index}
                 faq={faq}
                 toggleFAQ={toggleFAQ} />
-            ))}       
+            ))}   
+            <Footer />
         </Container>
     )
 };

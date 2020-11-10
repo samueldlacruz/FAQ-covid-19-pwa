@@ -20,16 +20,13 @@ export const FAQQuestion = styled.button`
  outline: none;
  display: flex;
  justify-content: space-between;
+ align-items: center;
 
  background: transparent;
  padding: 1rem;
  margin-bottom: 1rem;
  text-align: left;
  font-weight: bold;
-
- @media screen and (max-width: 700px) {
-   flex-direction: column;
- }
 `
 
 const slideDown = keyframes`
@@ -55,9 +52,12 @@ const slideDown = keyframes`
 export const FAQCategory = styled.span`
   background: #2D2D2D;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: clamp(1rem, .5vw, 1.5rem);
+  text-align: center;
+  width: 100px;
   padding: 5px;
+  margin-top: .75rem;
 `
 
 export const FAQAnswer = styled.p<FAQAnswerType>`
@@ -86,8 +86,7 @@ export const Icon = styled.div`
 `
 export const Flex = styled.div`
  display: flex;
- justify-content: center;
- align-items: center;
+ flex-direction: column;
 
  @media screen and (max-width: 700px) {
   margin-top: .75rem;
