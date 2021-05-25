@@ -5,6 +5,7 @@ import FAQ from '../FAQ'
 import { Faq } from '../FAQ/types'
 import { getFAQs } from '../../services/FAQsServices'
 import Footer from '../Footer'
+import Filter from '../Filter'
 
 const Container = styled.div`
  display: flex;
@@ -54,6 +55,7 @@ const Wrapper = () => {
     return (
         <Container>
             <Header />
+            <Filter />
             {faqs.map((faq, index) => (
                 <FAQ 
                 key={index} 
