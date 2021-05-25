@@ -16,7 +16,7 @@ const Container = styled.div`
  padding: 1rem;
 `
 
-const Wrapper = () => {
+const Wrapper: React.FunctionComponent = () => {
   const [faqs, setFaqs] = useState<Faq[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -24,6 +24,9 @@ const Wrapper = () => {
     fetchFaqs();
   }, []);
 
+  /**
+   * this function get FAQ from service
+   */
   const fetchFaqs = async () => {
     setLoading(true);
     try {
@@ -37,35 +40,42 @@ const Wrapper = () => {
     }
   };
 
+  /**
+   * this function toggle accordion card
+   * @param {number} index 
+   */
   const toggleFAQ = (index: number) => {
-      setFaqs(faqs.map((faq, i) => {
-          if (i === index) {
-              faq.isOpen = !faq.isOpen
-          } else {
-              faq.isOpen = false;
-          }
+    setFaqs(faqs.map((faq, i) => {
+      if (i === index) {
+        faq.isOpen = !faq.isOpen
+      } else {
+        faq.isOpen = false;
+      }
 
-         return faq;
-      }))
-  } 
-    
-    if (loading) {
-        return <h1>loading ... </h1>
-    }
-    return (
+      return faq;
+    }))
+  }
+
+  return (
+    <>
+      {loading ?
+        <h1>loading ... </h1>
+        :
         <Container>
-            <Header />
-            <Filter />
-            {faqs.map((faq, index) => (
-                <FAQ 
-                key={index} 
-                index={index}
-                faq={faq}
-                toggleFAQ={toggleFAQ} />
-            ))}   
-            <Footer />
+          <Header />
+          <Filter />
+          {faqs.map((faq, index) => (
+            <FAQ
+              key={index}
+              index={index}
+              faq={faq}
+              toggleFAQ={toggleFAQ} />
+          ))}
+          <Footer />
         </Container>
-    )
+      }
+    </>
+  )
 };
 
 export default Wrapper

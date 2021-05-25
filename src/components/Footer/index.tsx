@@ -11,7 +11,8 @@ const links = [
      href: 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks'
    }
 ]
-const Footer = () => {
+
+const Footer: React.FunctionComponent = () => {
     return (
        <FooterContainer>
          More information:

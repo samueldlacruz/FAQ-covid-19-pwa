@@ -11,13 +11,13 @@ import {
 } from './FAQ.styles';
 import { Faq } from './types';
 
-type FAQProps = {
+interface FAQProps {
     faq: Faq;
     index: number;
     toggleFAQ: Function;
 } 
 
-const FAQ = ({ faq, toggleFAQ, index }: FAQProps) => {
+const FAQ: React.FunctionComponent<FAQProps> = ({ faq, toggleFAQ, index }) => {
   const { question, category, answer, isOpen } = faq;
 
   const icon = isOpen ? <CloseIcon /> : <SpanIcon />;
