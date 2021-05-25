@@ -6,7 +6,7 @@ import {
     Icon,
     SpanIcon,
     CloseIcon,
-    FAQCategory,
+    FAQBadge,
     Flex
 } from './FAQ.styles';
 import { Faq } from './types';
@@ -27,7 +27,7 @@ const FAQ = ({ faq, toggleFAQ, index }: FAQProps) => {
             <FAQQuestion>
                <Flex>
                 {question}
-                <FAQCategory>{category}</FAQCategory>               
+                <FAQBadge>{category}</FAQBadge>               
                </Flex>
                <Icon onClick={() => toggleFAQ(index)}>{icon}</Icon>    
             </FAQQuestion>

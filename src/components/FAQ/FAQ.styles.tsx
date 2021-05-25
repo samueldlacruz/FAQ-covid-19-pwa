@@ -34,33 +34,29 @@ export const FAQQuestion = styled.button`
 `
 
 const slideDown = keyframes`
- 0% {
-   transform: translateY(-90%)
- }
- 50% {
-   transform: translateY(8%)
- }
- 65% {
-   transform: translateY(-4%)
- }
- 80% {
-   transform: translateY(4%)
- }
- 95% {
-  transform: translateY(-2%)
- }
- 100% {
-   transform: translateY(0%)
- }
+  0% {
+    transform: translateY(-1200px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 `
-export const FAQCategory = styled.span`
-  background: #2D2D2D;
+export const FAQBadge = styled.span`
+  background: #2d2d2d96;
   color: #fff;
   border-radius: 10px;
-  font-size: clamp(1rem, .5vw, 1.5rem);
+  font-size: small;
   text-align: center;
   width: 100px;
-  padding: 5px;
+  padding: 3px;
   margin-top: .75rem;
 `
 
@@ -70,7 +66,7 @@ export const FAQAnswer = styled.p<FAQAnswerType>`
  word-spacing: 2px;
  line-height: 1.75rem;
  display: ${({isOpen }) => (isOpen ? "block" : "none")};
- animation: ${slideDown} 500ms ease;
+ animation: ${slideDown} 500ms ease-in-out;
 `
 
 export const SpanIcon = styled(FaPlus)`
