@@ -7,7 +7,11 @@ type FAQAnswerType = {
 
 export const FAQContainer = styled.div`
   transition: all 0.4s ease;
-  width: 60vw;
+  width: 65vw;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const FAQQuestion = styled.button`
