@@ -13,13 +13,27 @@ export const FiltrerContainer = styled.div`
   }
 `
 
-export const Badge = styled.span`
-  background: #2d2d2d96;
-  color: #fff;
-  border-radius: 10px;
-  font-size: small;
-  text-align: center;
-  width: 100px;
-  padding: 3px;
-  margin-top: .75rem;
+export const ContainerInput = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-bottom: 3px solid rgb(24, 24, 24);
+
+  div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 5%;
+  }
+
+  input {
+    color: white;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 95%;
+    padding: 5px 1rem;
+  }
 `

@@ -1,8 +1,9 @@
 import React from 'react';
 import { 
     FiltrerContainer,
-    Badge
+    ContainerInput
 } from './Filter.style';
+import { HiSearch } from "react-icons/hi";
 
 interface FilterProps {
 
@@ -12,9 +13,12 @@ const Filter: React.FunctionComponent<FilterProps> = () => {
  
     return (
         <FiltrerContainer>
-            <Badge>Basics</Badge>
-            <Badge>Spread</Badge>
-            <Badge>Children</Badge>
+            <ContainerInput>
+                <div>
+                    <HiSearch />
+                </div>
+                <input type="text" placeholder="filter by categories, questions or answers" />
+            </ContainerInput>
         </FiltrerContainer>
     )
 }

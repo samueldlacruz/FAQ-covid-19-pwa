@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { FaPlus, FaTimes } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 type FAQAnswerType = {
     isOpen: boolean;
@@ -15,26 +15,37 @@ export const FAQContainer = styled.div`
 `
 
 export const FAQQuestion = styled.button`
- border: 2px solid #545454;
+ border: none;
+ border-bottom: 2px solid rgb(32, 32, 32);
  font-size: clamp(1rem, 1.5vw, 2rem);
  color: #fff;
  width: 100%;
- border-left: none;
- border-right: none;
  outline: none;
- display: flex;
- justify-content: space-between;
- align-items: center;
 
  background: transparent;
  padding: 1rem;
  margin-bottom: 1rem;
  text-align: left;
  font-weight: bold;
+
+ display: flex;
+ justify-content: space-between;
+
+ div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ @media screen and (max-width: 700px) {
+  margin-top: .75rem;
+ }
 `
 
 const slideDown = keyframes`
-
+  0% { transform: translateX(-2000px) scale(0.7); opacity: 0.7}
+  80% { transform: translateX(0px) scale(0.7);opacity: 0.7;}
+  100% {transform: scale(1);opacity: 1; }
 `
 export const FAQBadge = styled.span`
   background: #2d2d2d96;
@@ -42,9 +53,9 @@ export const FAQBadge = styled.span`
   border-radius: 10px;
   font-size: small;
   text-align: center;
-  width: 100px;
-  padding: 3px;
-  margin-top: .75rem;
+  width: fit-content;
+  padding: 4px 12px;
+  margin-left: 1rem;
 `
 
 export const FAQAnswer = styled.p<FAQAnswerType>`
@@ -56,11 +67,11 @@ export const FAQAnswer = styled.p<FAQAnswerType>`
  animation: ${slideDown} 500ms ease-in-out;
 `
 
-export const SpanIcon = styled(FaPlus)`
+export const SpanIcon = styled(FaChevronDown)`
  color: #fff;
 `
 
-export const CloseIcon = styled(FaTimes)`
+export const CloseIcon = styled(FaChevronUp)`
  color: #fff;
 `
 

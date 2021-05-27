@@ -1,6 +1,6 @@
 import React from 'react';
 import { FooterContainer, FooterItems, FooterLink } from './Footer.styles';
-
+import { HiLink } from 'react-icons/hi'
 const links = [
    {
      text: 'Symptoms of Coronavirus', 
@@ -15,10 +15,11 @@ const links = [
 const Footer: React.FunctionComponent = () => {
     return (
        <FooterContainer>
-         More information:
+         References:
           <FooterItems>
              {links.map((link, index) => (
               <FooterLink key={index}>
+                 <HiLink />
                 <a href={link.href}>{link.text}</a>
              </FooterLink>               
              ))}
