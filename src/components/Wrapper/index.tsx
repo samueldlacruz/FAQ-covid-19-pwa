@@ -14,6 +14,16 @@ const Container = styled.div`
  align-items: center;
  margin: 2rem 0;
  padding: 1rem;
+
+ main {
+   width: 65vw;
+ }
+
+ @media screen and (max-width: 700px) {
+  main {
+    width: 100%;
+  }
+ }
 `
 
 const Wrapper: React.FunctionComponent = () => {
@@ -63,14 +73,16 @@ const Wrapper: React.FunctionComponent = () => {
         :
         <Container>
           <Header />
-          <Filter />
-          {faqs.map((faq, index) => (
-            <FAQ
-              key={index}
-              index={index}
-              faq={faq}
-              toggleFAQ={toggleFAQ} />
-          ))}
+          <main>
+            <Filter />
+            {faqs.map((faq, index) => (
+              <FAQ
+                key={index}
+                index={index}
+                faq={faq}
+                toggleFAQ={toggleFAQ} />
+            ))}
+          </main>
           <Footer />
         </Container>
       }

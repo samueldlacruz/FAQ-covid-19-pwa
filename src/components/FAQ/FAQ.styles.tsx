@@ -5,15 +5,6 @@ type FAQAnswerType = {
     isOpen: boolean;
 }
 
-export const FAQContainer = styled.div`
-  transition: all 0.4s ease;
-  width: 65vw;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`
-
 export const FAQQuestion = styled.button`
  border: none;
  border-bottom: 2px solid rgb(32, 32, 32);
@@ -42,10 +33,36 @@ export const FAQQuestion = styled.button`
  }
 `
 
-const slideDown = keyframes`
-  0% { transform: translateX(-2000px) scale(0.7); opacity: 0.7}
-  80% { transform: translateX(0px) scale(0.7);opacity: 0.7;}
-  100% {transform: scale(1);opacity: 1; }
+const bounceInUp = keyframes`
+from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0) scaleX(3);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0) scaleX(1);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0) scaleX(0.98);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0) scaleX(0.995);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 `
 export const FAQBadge = styled.span`
   background: #2d2d2d96;
@@ -64,7 +81,7 @@ export const FAQAnswer = styled.p<FAQAnswerType>`
  word-spacing: 2px;
  line-height: 1.75rem;
  display: ${({isOpen }) => (isOpen ? "block" : "none")};
- animation: ${slideDown} 500ms ease-in-out;
+ animation: ${bounceInUp} 500ms ease-in-out;
 `
 
 export const SpanIcon = styled(FaChevronDown)`
