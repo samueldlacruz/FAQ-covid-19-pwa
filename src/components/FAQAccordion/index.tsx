@@ -7,15 +7,15 @@ import {
     CloseIcon,
     FAQBadge
 } from './FAQ.styles';
-import { Faq } from './types';
+import { FAQ } from '../../interfaces/FAQ';
 
 interface FAQProps {
-    faq: Faq;
+    faq: FAQ;
     index: number;
     toggleFAQ: Function;
 }
 
-const FAQ: React.FunctionComponent<FAQProps> = ({ faq, toggleFAQ, index }) => {
+const FAQAccordion: React.FunctionComponent<FAQProps> = ({ faq, toggleFAQ, index }) => {
     const { question, category, answer, isOpen } = faq;
 
     const icon = isOpen ? <CloseIcon /> : <SpanIcon />;
@@ -36,4 +36,4 @@ const FAQ: React.FunctionComponent<FAQProps> = ({ faq, toggleFAQ, index }) => {
     )
 }
 
-export default FAQ;
+export default FAQAccordion;

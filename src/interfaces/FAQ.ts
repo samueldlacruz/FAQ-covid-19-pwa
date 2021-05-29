@@ -1,4 +1,4 @@
-export type Faq = {
+export interface FAQ {
    question: string;
    answer: string;
    category: string;
