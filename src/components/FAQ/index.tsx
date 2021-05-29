@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    FAQContainer,
     FAQAnswer,
     FAQQuestion,
     Icon,
@@ -22,18 +21,18 @@ const FAQ: React.FunctionComponent<FAQProps> = ({ faq, toggleFAQ, index }) => {
     const icon = isOpen ? <CloseIcon /> : <SpanIcon />;
 
     return (
-        <FAQContainer>
-            <FAQQuestion>
+        <>
+            <FAQQuestion onClick={() => toggleFAQ(index)}>
                 {question}
                 <div>
                     <FAQBadge>{category}</FAQBadge>
-                    <Icon onClick={() => toggleFAQ(index)}>{icon}</Icon>
+                    <Icon>{icon}</Icon>
                 </div>
             </FAQQuestion>
             <FAQAnswer isOpen={isOpen}>
                 {answer}
             </FAQAnswer>
-        </FAQContainer>
+        </>
     )
 }
 

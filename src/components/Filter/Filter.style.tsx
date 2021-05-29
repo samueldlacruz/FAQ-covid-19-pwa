@@ -2,15 +2,11 @@ import styled from 'styled-components';
 
 export const FiltrerContainer = styled.div`
   display: flex;
-  width: 55vw;
+  width: 100%;
   flex-wrap: wrap;
   margin-bottom: 1rem;
   justify-content: space-around;
   align-items: center;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 `
 
 export const ContainerInput = styled.div`
