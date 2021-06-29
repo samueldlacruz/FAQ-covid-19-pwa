@@ -1,6 +1,6 @@
-import { Faq } from '../components/FAQ/types';
+import { FAQ } from '../interfaces/FAQ';
 
-const FAQs: Faq[] = [
+const FAQs: FAQ[] = [
     {
       question: "What is a novel coronavirus?",
       answer: `A novel coronavirus is a new coronavirus that has not been previously identified.
@@ -51,4 +51,4 @@ const FAQs: Faq[] = [
     }
 ]
 
-export const getFAQs = async ():Promise<Faq[]> => FAQs;
+export const getFAQs = async ():Promise<FAQ[]> => FAQs;
