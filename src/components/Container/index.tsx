@@ -5,13 +5,13 @@ import Footer from '../Footer'
 import FAQList from '../FAQList';
 
 const Wrapper: React.FunctionComponent = () => {
- 
+
   return (
-        <Container>
-          <Header />
-              <FAQList />
-          <Footer />
-        </Container>
+    <Container>
+      <Header />
+      <FAQList />
+      <Footer />
+    </Container>
   )
 };
 

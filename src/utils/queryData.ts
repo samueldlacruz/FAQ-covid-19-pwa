@@ -9,6 +9,7 @@
     if(data[0] === undefined) return;
     const query: string = value.toLowerCase();
     let newArray: Array<any> = [];
+    // eslint-disable-next-line
     data.filter((e: any) => {
         if(typeof(props) === 'string') return e[props].toLowerCase().includes(query);
         props.forEach((prop: string) => {

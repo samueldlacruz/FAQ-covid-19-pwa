@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { ContainerList } from './FAQList.styles';
-import FAQAccordion from '../FAQAccordion'
+import { ContainerList, NotFoundCard } from './FAQList.styles';
+import Accordion from '../Accordion'
 import { FAQ } from '../../interfaces/FAQ'
 import { getFAQs } from '../../services/FAQsServices'
 import Filter from '../FAQFilter'
 import { queryData } from '../../utils/queryData';
-
+import { FaInfo } from 'react-icons/fa';
 
 const FAQList: React.FunctionComponent = () => {
     const [faqs, setFaqs] = useState<FAQ[]>([]);
-    const [filterFaqs, setFilterFaqs] = useState<any>([]);
+    const [filterFaqs, setFilterFaqs] = useState<Array<FAQ> | undefined>([]);
 
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -34,25 +34,13 @@ const FAQList: React.FunctionComponent = () => {
         }
     };
 
-    /**
-     * this function toggle accordion card
-     * @param {number} index 
-     */
-    const toggleFAQ = (index: number): void => {
-        setFaqs(faqs.map((faq, i) => {
-            if (i === index) {
-                faq.isOpen = !faq.isOpen
-            } else {
-                faq.isOpen = false;
-            }
-
-            return faq;
-        }))
-    }
-
     const searchFAQ = (value: string) => {
-       const queriedFAQ = queryData(value, faqs, ['question', 'category']);
-        setFilterFaqs(queriedFAQ);
+        const results = queryData(value, faqs, ['question', 'category']);
+        setFilterFaqs(() => {
+            if (!results) return;
+
+            return results;
+        });
     }
 
     return (
@@ -62,14 +50,21 @@ const FAQList: React.FunctionComponent = () => {
                 :
                 <ContainerList>
                     <Filter searchFAQ={searchFAQ} />
-                
-                    {filterFaqs.map((faq: FAQ, index: number) => (
-                        <FAQAccordion
-                            key={index}
-                            index={index}
-                            faq={faq}
-                            toggleFAQ={toggleFAQ} />
-                    ))}
+                    {
+                        filterFaqs?.length === 0 || filterFaqs === [] ?
+                            <NotFoundCard>
+                                <div className="icon">
+                                    <FaInfo></FaInfo>
+                                </div>
+                                <span>Not found your question, Sorry</span>
+                            </NotFoundCard>
+                            :
+                            filterFaqs?.map((faq: FAQ, index: number) => (
+                                <Accordion key={index} >
+                                    <Accordion.Header category={faq.category}>{faq.question}</Accordion.Header>
+                                    <Accordion.Content>{faq.answer}</Accordion.Content>
+                                </Accordion>
+                            ))}
                 </ContainerList>
             }
         </>
