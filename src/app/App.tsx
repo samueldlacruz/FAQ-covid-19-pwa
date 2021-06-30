@@ -11,7 +11,7 @@ import light from '../styles/themes/light';
 import dark from '../styles/themes/dark';
 
 function App() {
-  const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
+  const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', dark);
 
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light);
