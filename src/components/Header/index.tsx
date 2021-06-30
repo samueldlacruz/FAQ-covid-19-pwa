@@ -1,22 +1,21 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+import { FaMoon, FaSun } from 'react-icons/fa'
+import { HeaderContainer, HeaderTitle,ThemeSwitcher } from './style'
+interface HeaderProps {
+  toggleTheme(): void;
+}
+const Header: React.FunctionComponent<HeaderProps> = ({ toggleTheme }) => {
+  const { title } = useContext(ThemeContext);
 
-const Heading = styled.h1`
-  font-size: clamp(1.5rem, 10vw, 2rem);
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color:  ${props => props.theme.colors.text};
-  text-align: center;
-  word-spacing: 5px;
-  display: flex;
-  flex-direction: column;
-`
-
-const Header = () => {
-   return (
-     <Heading>FAQ COVID-19</Heading>
-   )
+  return (
+    <HeaderContainer>
+      <ThemeSwitcher onClick={toggleTheme}>
+        {title === 'light' ? <FaSun /> : <FaMoon />}
+      </ThemeSwitcher>
+      <HeaderTitle>FAQ COVID-19</HeaderTitle>
+    </HeaderContainer>
+  )
 }
 
 export default Header

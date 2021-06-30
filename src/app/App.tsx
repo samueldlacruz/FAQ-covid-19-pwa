@@ -1,11 +1,14 @@
 import React from 'react';
 import { GlobalStyle } from './globalStyles';
+
 import Warpper from '../components/Container';
+import Header from '../components/Header';
+
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 import usePersistedState from '../utils/usePersistedState';
 
 import light from '../styles/themes/light';
-import dark from '../styles/themes/dark';  
+import dark from '../styles/themes/dark';
 
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
@@ -17,7 +20,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-       <button style={{backgroundColor: 'white', color: 'black'}} onClick={toggleTheme}>{theme.title}</button>
+      <Header toggleTheme={toggleTheme} />
       <Warpper />
     </ThemeProvider>
   );
