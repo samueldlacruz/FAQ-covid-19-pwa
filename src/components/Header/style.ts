@@ -5,7 +5,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderTitle = styled.h1`
-  font-size: clamp(1.5rem, 10vw, 2rem);
+  font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 1.5rem;
