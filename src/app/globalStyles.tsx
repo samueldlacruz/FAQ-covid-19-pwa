@@ -10,5 +10,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background:${props => props.theme.colors.background};
+    transition: 500ms ease-in-out;
   }
 `
