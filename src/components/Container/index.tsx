@@ -1,6 +1,5 @@
 import React from 'react'
-import { Container } from './Container.styles';
-import Header from '../Header'
+import { Container } from './styles';
 import Footer from '../Footer'
 import FAQList from '../FAQList';
 
@@ -8,7 +7,6 @@ const Wrapper: React.FunctionComponent = () => {
 
   return (
     <Container>
-      <Header />
       <FAQList />
       <Footer />
     </Container>

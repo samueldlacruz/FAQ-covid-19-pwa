@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ContainerList, NotFoundCard } from './FAQList.styles';
+import { ContainerList, NotFoundCard } from './styles';
 import Accordion from '../Accordion'
 import { FAQ } from '../../interfaces/FAQ'
 import { getFAQs } from '../../services/FAQsServices'
@@ -38,7 +38,6 @@ const FAQList: React.FunctionComponent = () => {
         const results = queryData(value, faqs, ['question', 'category']);
         setFilterFaqs(() => {
             if (!results) return;
-
             return results;
         });
     }

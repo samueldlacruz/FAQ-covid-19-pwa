@@ -7,9 +7,9 @@ type FAQAnswerType = {
 
 export const FAQQuestion = styled.button`
  border: none;
- border-bottom: 2px solid rgb(32, 32, 32);
+ border-bottom: 2px solid ${props => props.theme.colors.primary};
  font-size: clamp(1rem, 1.5vw, 2rem);
- color: #fff;
+ color: ${props => props.theme.colors.text};
  width: 100%;
  outline: none;
 
@@ -65,7 +65,7 @@ from,
   }
 `
 export const FAQBadge = styled.span`
-  background: #2d2d2d96;
+  background: ${props => props.theme.colors.secundary};
   color: #fff;
   border-radius: 10px;
   font-size: small;
@@ -80,16 +80,17 @@ export const FAQAnswer = styled.p<FAQAnswerType>`
  color: #BBBBBB;
  word-spacing: 2px;
  line-height: 1.75rem;
+ color: ${props => (props.theme.title === 'light' ? props.theme.colors.secundary : '')};
  display: ${({isOpen }) => (isOpen ? "block" : "none")};
  animation: ${bounceInUp} 500ms ease-in-out;
 `
 
 export const SpanIcon = styled(FaChevronDown)`
- color: #fff;
+ color: ${props => props.theme.colors.text};
 `
 
 export const CloseIcon = styled(FaChevronUp)`
- color: #fff;
+ color: ${props => props.theme.colors.text};
 `
 
 export const Icon = styled.div`

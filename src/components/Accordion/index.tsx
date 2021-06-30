@@ -6,7 +6,7 @@ import {
     SpanIcon,
     CloseIcon,
     FAQBadge
-} from './Accordion.styles';
+} from './styles';
 import useAccordion from '../../hooks/useAccordion';
 import { AccordionProvider } from '../../context/AccordionContext';
 import { AccordionComposition, QuestionProps } from '../../interfaces/Accordion';

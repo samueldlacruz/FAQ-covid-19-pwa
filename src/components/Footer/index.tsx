@@ -1,6 +1,7 @@
 import React from 'react';
-import { FooterContainer, FooterItems, FooterLink } from './Footer.styles';
+import { FooterContainer, FooterItems, FooterLink } from './styles';
 import { HiLink } from 'react-icons/hi'
+
 const links = [
    {
      text: 'Symptoms of Coronavirus', 

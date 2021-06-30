@@ -15,17 +15,18 @@ export const ContainerInput = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
-  border-bottom: 3px solid rgb(24, 24, 24);
+  border-bottom: 3px solid  ${props => props.theme.colors.primary};
 
   div {
     align-items: center;
     display: flex;
+    color: ${props => props.theme.colors.text};
     justify-content: center;
     width: 5%;
   }
 
   input {
-    color: white;
+    color: ${props => props.theme.colors.text};
     background: transparent;
     border: none;
     outline: none;

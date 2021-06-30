@@ -2,7 +2,7 @@ import React from 'react';
 import { 
     FiltrerContainer,
     ContainerInput
-} from './FAQFilter.style';
+} from './style';
 import { HiSearch } from "react-icons/hi";
 
 interface FAQFilterProps {

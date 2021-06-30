@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const FooterContainer = styled.div`
  margin-top: 2rem;
  padding: 1rem;
- background: rgb(24, 24, 24);
- color:#fff;;
+ background-color: ${props => 
+  (props.theme.title === 'light' ? props.theme.colors.background : props.theme.colors.secundary)};
+ color: ${props => props.theme.colors.text};
  border-radius: 5px;
  line-height: 1.5;
+ border: 2px solid ${props => props.theme.colors.secundary};
  display: flex;
  flex-direction: column;
 
