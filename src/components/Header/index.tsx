@@ -6,7 +6,7 @@ const Heading = styled.h1`
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color:  ${props => props.theme.colors.text};
   text-align: center;
   word-spacing: 5px;
   display: flex;
