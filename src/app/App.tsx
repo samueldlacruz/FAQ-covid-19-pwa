@@ -5,7 +5,7 @@ import Warpper from '../components/Container';
 import Header from '../components/Header';
 
 import { ThemeProvider, DefaultTheme } from 'styled-components';
-import usePersistedState from '../utils/usePersistedState';
+import usePersistedState from '../hooks/usePersistedState';
 
 import light from '../styles/themes/light';
 import dark from '../styles/themes/dark';
