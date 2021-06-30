@@ -50,7 +50,7 @@ const FAQList: React.FunctionComponent = () => {
                 <ContainerList>
                     <Filter searchFAQ={searchFAQ} />
                     {
-                        filterFaqs?.length === 0 || filterFaqs === [] ?
+                        filterFaqs?.length === 0 ?
                             <NotFoundCard>
                                 <div className="icon">
                                     <FaInfo></FaInfo>
