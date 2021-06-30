@@ -9,22 +9,24 @@ export const ContainerList = styled.main`
 `
 
 export const NotFoundCard = styled.div`
-   color: white;
+   color: ${props => props.theme.colors.text};
    display: flex;
    align-items: center;
    justify-content: center; 
    flex-direction: column;
    border-radius: 5px; 
+   border: 2px solid ${props => props.theme.colors.secundary};
    text-align: center; 
    padding: 1rem 2rem; 
-   background: rgb(24, 24, 24);
+   background: ${props => 
+      (props.theme.title === 'light' ? props.theme.colors.background : props.theme.colors.secundary)};
 
    .icon {
       margin: 1rem;
       padding: 1rem 1.2rem;
-      color: #000;
+      color: ${props => props.theme.title === 'light' ? '#fff': '#000'};
       font-size: 1.4rem;
       border-radius: 50%;
-      background-color: white;
+      background-color: ${props => props.theme.title === 'light' ? '#000': '#fff'};
    }
 `;
