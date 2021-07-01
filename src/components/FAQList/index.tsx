@@ -4,7 +4,7 @@ import Accordion from '../Accordion'
 import { FAQ } from '../../interfaces/FAQ'
 import { getFAQs } from '../../services/FAQsServices'
 import Filter from '../FAQFilter'
-import { queryData } from '../../utils/queryData';
+import { _filter } from '../../utils/filter';
 import { FaInfo } from 'react-icons/fa';
 
 const FAQList: React.FunctionComponent = () => {
@@ -35,7 +35,7 @@ const FAQList: React.FunctionComponent = () => {
     };
 
     const searchFAQ = (value: string) => {
-        const results = queryData(value, faqs, ['question', 'category']);
+        const results = _filter(value, faqs, ['question', 'category']);
         setFilterFaqs(() => {
             if (!results) return;
             return results;

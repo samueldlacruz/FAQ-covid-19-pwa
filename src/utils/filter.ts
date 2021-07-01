@@ -5,7 +5,7 @@
  * @param {string | Array<string>} props Properties by which the data will be filtered
  * @returns {any} Array containing results
  */
- export const queryData = (value: string, data: any, props: string | string[]): Array<any> | void => {
+ export const _filter = (value: string, data: any, props: string | string[]): Array<any> | void => {
     if(data[0] === undefined) return;
     const query: string = value.toLowerCase();
     let newArray: Array<any> = [];
