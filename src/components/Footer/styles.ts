@@ -4,11 +4,11 @@ export const FooterContainer = styled.div`
  margin-top: 2rem;
  padding: 1rem;
  background-color: ${props => 
-  (props.theme.title === 'light' ? props.theme.colors.background : props.theme.colors.secundary)};
+  (props.theme.title === 'light' ? props.theme.colors.background : props.theme.colors.secondary)};
  color: ${props => props.theme.colors.text};
  border-radius: 5px;
  line-height: 1.5;
- border: 2px solid ${props => props.theme.colors.secundary};
+ border: 2px solid ${props => props.theme.colors.secondary};
  display: flex;
  flex-direction: column;
 

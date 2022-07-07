@@ -1,33 +1,28 @@
 import React from 'react';
-import { 
-    FiltrerContainer,
-    ContainerInput
-} from './style';
+import { FilterContainer, ContainerInput } from './style';
 import { HiSearch } from "react-icons/hi";
 
-interface FAQFilterProps {
-  searchFAQ: Function
-} 
+const FAQFilter = ({ searchFAQ }: { searchFAQ: Function }) => {
 
-const FAQFilter: React.FunctionComponent<FAQFilterProps> = ({ searchFAQ }) => {
- 
-    /**
-     * Handle input change and set search
-     * @param {React.ChangeEvent<HTMLInputElement>} ev - event
-     */
     const handleChange = (ev: React.ChangeEvent<HTMLInputElement>): void => {
-       searchFAQ(ev.currentTarget.value);
+        const value = ev.target.value;
+
+        searchFAQ(value);
     }
 
     return (
-        <FiltrerContainer>
+        <FilterContainer>
             <ContainerInput>
                 <div>
                     <HiSearch />
                 </div>
-                <input type="text" onChange={handleChange} placeholder="filter by categories or questions" />
+                <input
+                    type="text"
+                    onChange={handleChange}
+                    placeholder="filter by categories or questions"
+                />
             </ContainerInput>
-        </FiltrerContainer>
+        </FilterContainer>
     )
 }
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FiltrerContainer = styled.div`
+export const FilterContainer = styled.div`
   display: flex;
   width: 100%;
   flex-wrap: wrap;

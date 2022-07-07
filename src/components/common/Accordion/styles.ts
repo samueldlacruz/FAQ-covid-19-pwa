@@ -65,7 +65,7 @@ from,
   }
 `
 export const FAQBadge = styled.span`
-  background: ${props => props.theme.colors.secundary};
+  background: ${props => props.theme.colors.secondary};
   color: #fff;
   border-radius: 10px;
   font-size: small;
@@ -80,7 +80,7 @@ export const FAQAnswer = styled.p<FAQAnswerType>`
  color: #BBBBBB;
  word-spacing: 2px;
  line-height: 1.75rem;
- color: ${props => (props.theme.title === 'light' ? props.theme.colors.secundary : '')};
+ color: ${props => (props.theme.title === 'light' ? props.theme.colors.secondary : '')};
  display: ${({isOpen }) => (isOpen ? "block" : "none")};
  animation: ${bounceInUp} 500ms ease-in-out;
 `

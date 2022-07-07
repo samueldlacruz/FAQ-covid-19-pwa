@@ -15,11 +15,11 @@ export const NotFoundCard = styled.div`
    justify-content: center; 
    flex-direction: column;
    border-radius: 5px; 
-   border: 2px solid ${props => props.theme.colors.secundary};
+   border: 2px solid ${props => props.theme.colors.secondary};
    text-align: center; 
    padding: 1rem 2rem; 
    background: ${props => 
-      (props.theme.title === 'light' ? props.theme.colors.background : props.theme.colors.secundary)};
+      (props.theme.title === 'light' ? props.theme.colors.background : props.theme.colors.secondary)};
 
    .icon {
       margin: 1rem;
