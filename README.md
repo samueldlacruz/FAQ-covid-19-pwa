@@ -9,7 +9,7 @@ Live demo: [website](https://faqs-covid19.netlify.app/)
 > **Note:** remember to install to be able use it as pwa.
 
 Created with: 
-- React 
+- React (compound components pattern)
 - TypeScript
 - Styled component
 - PWA
