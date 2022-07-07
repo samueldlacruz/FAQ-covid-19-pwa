@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaHeadSideMask } from 'react-icons/fa';
 import { FAQ } from '../../../interfaces/FAQ';
 import { getFAQs } from '../../../services/FAQsServices';
 import { _filter } from '../../../utils/filter';
@@ -47,7 +48,7 @@ const FAQList: React.FunctionComponent = () => {
     return (
         <React.Fragment>
             {!isLoad ?
-                <Loading />
+                <Loading icon={FaHeadSideMask} iconSize="lg" />
                 :
                 <ContainerList>
                     <Filter searchFAQ={searchFAQ} />
