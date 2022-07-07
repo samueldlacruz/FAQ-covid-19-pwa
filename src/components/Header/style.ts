@@ -19,6 +19,7 @@ export const HeaderTitle = styled.h1`
 export const ThemeSwitcher = styled.button`
     all: unset;
     position: absolute;
+    cursor: pointer;
     padding: 3px;
     right: 1rem;
     top: 1rem;
