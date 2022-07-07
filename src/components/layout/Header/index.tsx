@@ -12,7 +12,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({ toggleTheme }) => {
 
   return (
     <HeaderContainer>
-      <ThemeSwitcher onClick={toggleTheme}>
+      <ThemeSwitcher aria-label="theme switcher" onClick={toggleTheme}>
         {title === 'light' ? <FaSun /> : <FaMoon />}
       </ThemeSwitcher>
       <HeaderTitle>FAQ COVID-19</HeaderTitle>

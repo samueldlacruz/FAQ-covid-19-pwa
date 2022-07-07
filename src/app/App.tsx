@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 import { GlobalStyle } from './globalStyles';
 import Wrapper from '../components/layout/Wrapper';
@@ -6,8 +6,10 @@ import Header from '../components/layout/Header';
 import usePersistedState from '../hooks/usePersistedState';
 import light from '../styles/themes/light';
 import dark from '../styles/themes/dark';
-import FAQList from '../components/FAQ/List';
-import Footer from '../components/layout/Footer';
+import Loading from '../components/common/Loading';
+import { FaHeadSideMask } from 'react-icons/fa';
+const FAQList = lazy(() => import('../components/FAQ/List'));
+const Footer = lazy(() => import('../components/layout/Footer'));
 
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', dark);
@@ -18,14 +20,16 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <Suspense fallback={<Loading icon={FaHeadSideMask} message="Init App, loading ..." iconSize="lg" />}>
+        <GlobalStyle />
 
-      <Header toggleTheme={toggleTheme} />
-      <Wrapper>
-        <FAQList />
-        <Footer />
-      </Wrapper>
+        <Header toggleTheme={toggleTheme} />
+        <Wrapper>
+          <FAQList />
+          <Footer />
+        </Wrapper>
 
+      </Suspense>
     </ThemeProvider>
   );
 }

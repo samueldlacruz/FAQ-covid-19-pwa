@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { FaHeadSideMask } from 'react-icons/fa';
 import { FAQ } from '../../../interfaces/FAQ';
 import { getFAQs } from '../../../services/FAQsServices';
-import { _filter } from '../../../utils/filter';
 import Accordion from '../../common/Accordion';
 import Loading from '../../common/Loading';
 import Filter from '../Filter';
@@ -35,8 +34,9 @@ const FAQList: React.FunctionComponent = () => {
         }
     };
 
-    const searchFAQ = (value: string) => {
+    const searchFAQ = async (value: string) => {
 
+        const { _filter } = await import('../../../utils/filter');
         const results = _filter(value, faqs, ['question', 'category']);
 
         setFilterFaqs(() => {
@@ -47,7 +47,7 @@ const FAQList: React.FunctionComponent = () => {
 
     return (
         <React.Fragment>
-            {!isLoad ?
+            {isLoad ?
                 <Loading icon={FaHeadSideMask} iconSize="lg" />
                 :
                 <ContainerList>

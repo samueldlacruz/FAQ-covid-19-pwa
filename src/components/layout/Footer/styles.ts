@@ -29,14 +29,14 @@ export const FooterLink = styled.li`
   margin-top: .55rem;
 
  a {
-     color: #3a7fda;
-     padding-left: 5px;
-     text-decoration: none;
-     transition: 0.2s ease-in-out;
-
-     &:hover {
-       color: #448eee;
-       text-decoration: underline;  
-     }
+   color: ${props => props.theme.colors.text};
+   padding-left: 5px;
+   text-decoration: none;
+   transition: 0.2s ease-in-out;
+   text-decoration: underline;  
+   
+   &:hover {
+      color: #448eee;
+    }
  }
 `
