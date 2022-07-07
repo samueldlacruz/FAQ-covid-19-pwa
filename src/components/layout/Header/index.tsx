@@ -6,6 +6,7 @@ import { HeaderContainer, HeaderTitle, ThemeSwitcher } from './style'
 interface HeaderProps {
   toggleTheme(): void;
 }
+
 const Header: React.FunctionComponent<HeaderProps> = ({ toggleTheme }) => {
   const { title } = useContext(ThemeContext as any);
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { FAQ } from '../../interfaces/FAQ';
-import { getFAQs } from '../../services/FAQsServices';
-import { _filter } from '../../utils/filter';
-import Accordion from '../common/Accordion';
-import Loading from '../common/Loading';
-import Filter from '../FAQFilter';
+import { FAQ } from '../../../interfaces/FAQ';
+import { getFAQs } from '../../../services/FAQsServices';
+import { _filter } from '../../../utils/filter';
+import Accordion from '../../common/Accordion';
+import Loading from '../../common/Loading';
+import Filter from '../Filter';
 import Empty from './Empty';
 import { ContainerList } from './styles';
 
@@ -46,7 +46,7 @@ const FAQList: React.FunctionComponent = () => {
 
     return (
         <React.Fragment>
-            {isLoad ?
+            {!isLoad ?
                 <Loading />
                 :
                 <ContainerList>
