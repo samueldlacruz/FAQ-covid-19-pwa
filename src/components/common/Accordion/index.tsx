@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { AccordionProvider } from '../../../context/AccordionContext';
-import { AccordionComposition } from '../../../interfaces/Accordion';
+import { AccordionComposition, AccordionProps } from '../../../interfaces/Accordion';
 import Content from './Content';
 import Header from './Header';
 
-const Accordion: React.FunctionComponent & AccordionComposition = ({ children }) => {
+const Accordion: React.FC<AccordionProps> & AccordionComposition = ({ children }) => {
     const [activeItem, setActiveItem] = useState<boolean>(false);
 
     return (
@@ -14,8 +14,8 @@ const Accordion: React.FunctionComponent & AccordionComposition = ({ children })
     )
 }
 
-
-Accordion.Header = Header;
 Accordion.Content = Content;
+Accordion.Header = Header;
+
 
 export default Accordion;

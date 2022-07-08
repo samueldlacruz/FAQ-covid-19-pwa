@@ -12,24 +12,15 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "isolatedModules": true,
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
-    "sourceMap": true,
-    "declaration": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "incremental": true,
-    "noFallthroughCasesInSwitch": true
+    "jsx": "react-jsx"
   },
   "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "build"
+    "src"
   ]
 }

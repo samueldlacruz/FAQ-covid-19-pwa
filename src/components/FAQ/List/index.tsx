@@ -11,7 +11,7 @@ import { ContainerList } from './styles';
 const FAQList: React.FunctionComponent = () => {
 
     const [faqs, setFaqs] = useState<FAQ[]>([]);
-    const [filterFaqs, setFilterFaqs] = useState<Array<FAQ> | undefined>([]);
+    const [filterFaqs, setFilterFaqs] = useState<FAQ[]>([]);
     const [isLoad, setIsLoad] = useState<boolean>(false);
 
     useEffect(() => {
@@ -37,12 +37,13 @@ const FAQList: React.FunctionComponent = () => {
     const searchFAQ = async (value: string) => {
 
         const { _filter } = await import('../../../utils/filter');
-        const results = _filter(value, faqs, ['question', 'category']);
 
-        setFilterFaqs(() => {
-            if (!results) return;
-            return results;
-        });
+        const results = _filter(value, faqs, ['question', 'category']);
+        
+        if (!results) return;
+        if (results.length === 0) return faqs;
+
+        setFilterFaqs(results);
     }
 
     return (

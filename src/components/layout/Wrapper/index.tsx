@@ -1,7 +1,7 @@
-import React from 'react'
+import { ReactNode } from 'react';
 import { Container } from './styles';
 
-const Wrapper: React.FunctionComponent = ({ children }) => {
+const Wrapper = ({ children }: { children: ReactNode }) => {
 
   return (
     <Container>

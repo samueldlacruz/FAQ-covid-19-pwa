@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from "react";
 import useAccordion from "../../../hooks/useAccordion";
+import { AccordionContentProps } from "../../../interfaces/Accordion";
 import { FAQAnswer } from "./styles";
 
-const Content: FunctionComponent = ({ children }) => {
+const Content = ({ children }: AccordionContentProps) => {
     const { activeItem } = useAccordion();
 
     return (

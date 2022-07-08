@@ -1,13 +1,13 @@
-import React, { lazy, Suspense } from 'react';
-import { ThemeProvider, DefaultTheme } from 'styled-components';
-import { GlobalStyle } from './globalStyles';
-import Wrapper from '../components/layout/Wrapper';
-import Header from '../components/layout/Header';
-import usePersistedState from '../hooks/usePersistedState';
-import light from '../styles/themes/light';
-import dark from '../styles/themes/dark';
-import Loading from '../components/common/Loading';
+import { lazy, Suspense } from 'react';
 import { FaHeadSideMask } from 'react-icons/fa';
+import { DefaultTheme, ThemeProvider } from 'styled-components';
+import Loading from '../components/common/Loading';
+import Header from '../components/layout/Header';
+import Wrapper from '../components/layout/Wrapper';
+import usePersistedState from '../hooks/usePersistedState';
+import dark from '../styles/themes/dark';
+import light from '../styles/themes/light';
+import { GlobalStyle } from './globalStyles';
 const FAQList = lazy(() => import('../components/FAQ/List'));
 const Footer = lazy(() => import('../components/layout/Footer'));
 

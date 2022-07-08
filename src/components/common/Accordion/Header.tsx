@@ -1,9 +1,8 @@
-import React, { FunctionComponent } from "react";
 import useAccordion from "../../../hooks/useAccordion";
-import { QuestionProps } from "../../../interfaces/Accordion";
+import { AccordionHeaderProps } from "../../../interfaces/Accordion";
 import { CloseIcon, FAQBadge, FAQQuestion, Icon, SpanIcon } from "./styles";
 
-const Header: FunctionComponent<QuestionProps> = ({ children, category }) => {
+const Header = ({ children, category }: AccordionHeaderProps) => {
     const { setActiveItem, activeItem } = useAccordion();
 
     return (
