@@ -5,7 +5,7 @@
 >
 >created with the purpose of practicing ***styled component*** and the basic concepts of ***PWA***.
 
-Live demo: [website](https://faqs-covid19.netlify.app/)
+Live demo: [website](https://faq-covid-19-pwa.vercel.app/)
 > **Note:** remember to install to be able use it as pwa.
 
 Created with: 
