@@ -12,4 +12,19 @@ export const GlobalStyle = createGlobalStyle`
     background:${props => props.theme.colors.background};
     transition: 500ms ease-in-out;
   }
+
+ 
+  ::-webkit-scrollbar {
+  /* Set the width and height of the scrollbar */
+  width: 8px;
+  height: 100%;
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+  width: 8px;
+  border-radius: 4px;
+  background-color: gray;
+  opacity: 0.25;
+}
 `
