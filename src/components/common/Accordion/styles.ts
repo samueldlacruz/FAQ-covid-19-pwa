@@ -1,37 +1,38 @@
-import styled, { keyframes } from 'styled-components';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import styled, { keyframes } from "styled-components";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-type FAQAnswerType = {
-    isOpen: boolean;
-}
+export const FAQQuestion = styled.button<{ isOpen: boolean }>`
+  border: none;
+  border-bottom: 1px solid ${(props) => props.theme.colors.primary};
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  color: ${(props) => props.theme.colors.text};
+  width: 100%;
+  outline: none;
 
-export const FAQQuestion = styled.button`
- border: none;
- border-bottom: 2px solid ${props => props.theme.colors.primary};
- font-size: clamp(1rem, 1.5vw, 2rem);
- color: ${props => props.theme.colors.text};
- width: 100%;
- outline: none;
+  background: ${({ isOpen, theme }) =>
+    isOpen
+      ? theme.title === "light"
+        ? "#37415114"
+        : "#41587c38"
+      : "transparent"};
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: bold;
 
- background: transparent;
- padding: 1rem;
- margin-bottom: 1rem;
- text-align: left;
- font-weight: bold;
+  display: flex;
+  justify-content: space-between;
 
- display: flex;
- justify-content: space-between;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
- div {
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
-
- @media screen and (max-width: 700px) {
-  margin-top: .75rem;
- }
-`
+  @media screen and (max-width: 700px) {
+    margin-top: 0.75rem;
+  }
+`;
 
 const bounceInUp = keyframes`
 from,
@@ -63,9 +64,11 @@ from,
   to {
     transform: translate3d(0, 0, 0);
   }
-`
+`;
 export const FAQBadge = styled.span`
-  background: ${props => props.theme.colors.secondary};
+  background: ${(props) => props.theme.colors.secondary};
+  border: 0.4px solid
+    ${(props) => (props.theme.title === "dark" ? "#cccccc96" : "#334155")};
   color: #fff;
   border-radius: 10px;
   font-size: small;
@@ -73,38 +76,41 @@ export const FAQBadge = styled.span`
   width: fit-content;
   padding: 4px 12px;
   margin-left: 1rem;
-`
+`;
 
-export const FAQAnswer = styled.p<FAQAnswerType>`
- padding: .75rem;
- color: #BBBBBB;
- word-spacing: 2px;
- line-height: 1.75rem;
- color: ${props => (props.theme.title === 'light' ? props.theme.colors.secondary : '')};
- display: ${({isOpen }) => (isOpen ? "block" : "none")};
- animation: ${bounceInUp} 500ms ease-in-out;
-`
+export const FAQAnswer = styled.p<{ isOpen: boolean }>`
+  padding: 0.75rem;
+  color: #bbbbbb;
+  word-spacing: 2px;
+  line-height: 1.75rem;
+  color: ${(props) =>
+    props.theme.title === "light" ? props.theme.colors.secondary : ""};
+  border-bottom: 1px dashed ${(props) => props.theme.colors.primary};
+  margin-bottom: 1.5rem;
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  animation: ${bounceInUp} 0.8s ease-in-out;
+`;
 
 export const SpanIcon = styled(FaChevronDown)`
- color: ${props => props.theme.colors.text};
-`
+  color: ${(props) => props.theme.colors.text};
+`;
 
 export const CloseIcon = styled(FaChevronUp)`
- color: ${props => props.theme.colors.text};
-`
+  color: ${(props) => props.theme.colors.text};
+`;
 
 export const Icon = styled.div`
- background: transparent;
- font-size: 1rem;
- padding-left: 5px;
- cursor: pointer;
- outline: none;
-`
+  background: transparent;
+  font-size: 1rem;
+  padding-left: 5px;
+  cursor: pointer;
+  outline: none;
+`;
 export const Flex = styled.div`
- display: flex;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
- @media screen and (max-width: 700px) {
-  margin-top: .75rem;
- }
-`
+  @media screen and (max-width: 700px) {
+    margin-top: 0.75rem;
+  }
+`;

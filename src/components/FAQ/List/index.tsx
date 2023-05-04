@@ -57,7 +57,7 @@ const FAQList: React.FunctionComponent = () => {
                         <Empty />
                         :
                         filterFaqs?.map((faq: FAQ, index: number) => (
-                            <Accordion key={index} >
+                            <Accordion key={`faq-accordion-${index}`}>
                                 <Accordion.Header category={faq.category}>
                                     {faq.question}
                                 </Accordion.Header>

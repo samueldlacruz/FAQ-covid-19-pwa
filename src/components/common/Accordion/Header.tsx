@@ -6,7 +6,7 @@ const Header = ({ children, category }: AccordionHeaderProps) => {
     const { setActiveItem, activeItem } = useAccordion();
 
     return (
-        <FAQQuestion onClick={() => setActiveItem(!activeItem)}>
+        <FAQQuestion isOpen={activeItem} onClick={() => setActiveItem(!activeItem)}>
             {children}
             <div>
                 <FAQBadge>{category}</FAQBadge>
