@@ -8,13 +8,13 @@ interface HeaderProps {
 }
 
 const Header: React.FunctionComponent<HeaderProps> = ({ toggleTheme }) => {
-  const { title } = useContext(ThemeContext as any);
+  const { title } = useContext(ThemeContext);
 
   return (
     <HeaderContainer>
-      <ThemeSwitcher aria-label="theme switcher" onClick={toggleTheme}>
-        {title === 'light' ? <FaSun /> : <FaMoon />}
-      </ThemeSwitcher>
+        <ThemeSwitcher aria-label="theme switcher" onClick={toggleTheme}>
+          {title === 'light' ? <FaSun /> : <FaMoon />}
+        </ThemeSwitcher>
       <HeaderTitle>FAQ COVID-19</HeaderTitle>
     </HeaderContainer>
   )
