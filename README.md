@@ -1,5 +1,4 @@
-<h1 style="display:flex; text-align: center; justify-content:center; align-items:center;">FAQ COVID-19 PWA</h1>
-<hr>
+##FAQ COVID-19 PWA
 
 ## Overview
 > Simple **pwa** about app frequently asked questions *(FAQ)* about covid-19.
