@@ -9,12 +9,19 @@ Live demo: [website](https://faq-covid-19-pwa.vercel.app/)
 > **Note:** remember to install to be able use it as pwa.
 
 Created with: 
-- React (compound components pattern)
+- React (compound components pattern, Context API)
 - TypeScript
 - Styled component
 - PWA
+- Create-react-app
 
 <hr>
 
-![screenshot project](screenshot.png)
+![screenshot project](/screenshots/screenshot-dark.png)
+*screenshot project (App Dark mode)*
+
+![screenshot project](/screenshots/screenshot-light.png)
+*screenshot project (App Light mode)*
+
+![screenshot project](/screenshots/screenshot-with-lighthouse.png)
 *screenshot project (App and lighthouse)*
