@@ -1,4 +1,4 @@
-##FAQ COVID-19 PWA
+# FAQ COVID-19 PWA
 
 ## Overview
 > Simple **pwa** about app frequently asked questions *(FAQ)* about covid-19.
