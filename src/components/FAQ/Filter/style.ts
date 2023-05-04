@@ -4,7 +4,7 @@ export const FilterContainer = styled.div`
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   justify-content: space-around;
   align-items: center;
 `
@@ -15,7 +15,7 @@ export const ContainerInput = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
-  border-bottom: 3px solid  ${props => props.theme.colors.primary};
+  border-bottom: 2px solid  ${props => props.theme.colors.primary};
 
   div {
     align-items: center;
