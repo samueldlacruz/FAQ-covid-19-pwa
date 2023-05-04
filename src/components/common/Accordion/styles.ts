@@ -72,6 +72,7 @@ export const FAQBadge = styled.span`
   color: #fff;
   border-radius: 10px;
   font-size: small;
+  text-transform: capitalize;
   text-align: center;
   width: fit-content;
   padding: 4px 12px;

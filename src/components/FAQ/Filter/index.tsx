@@ -19,7 +19,7 @@ const FAQFilter = ({ searchFAQ }: { searchFAQ: Function }) => {
                 <input
                     type="text"
                     onChange={handleChange}
-                    placeholder="filter by categories or questions"
+                    placeholder="Search by categories or questions"
                 />
             </ContainerInput>
         </FilterContainer>

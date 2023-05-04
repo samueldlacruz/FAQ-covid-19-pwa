@@ -15,7 +15,16 @@ export const ContainerInput = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
+  transition: border 300ms ease-in;
   border-bottom: 2px solid  ${props => props.theme.colors.primary};
+
+  &:focus-within > div {
+    opacity: 1;
+  }
+
+  &:focus-within {
+    border-bottom: 2px solid #ccc;
+  }
 
   div {
     align-items: center;
@@ -23,6 +32,10 @@ export const ContainerInput = styled.div`
     color: ${props => props.theme.colors.text};
     justify-content: center;
     width: 5%;
+    opacity: 0.5;
+    font-size: 1.3rem;
+    transition: opacity 300ms ease-in;
+    padding: 0px 0px 5px 0px;
   }
 
   input {
