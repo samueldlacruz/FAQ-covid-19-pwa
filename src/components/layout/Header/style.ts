@@ -3,6 +3,10 @@ import styled from "styled-components"
 export const HeaderContainer = styled.div`
   width: 65vw;
   margin: 2rem auto;
+
+  @media (max-width: 768px) {
+   width: 100%;
+ }
 `;
 
 export const HeaderTitle = styled.h1`
@@ -23,5 +27,12 @@ export const ThemeSwitcher = styled.button`
     cursor: pointer;
     right: 0px;
     color: ${props =>  props.theme.colors.text};
-    font-size: 1.2rem;
+    font-size: 1rem;
+    border: 2px solid ${props => props.theme.colors.primary};
+    padding: 7px 7px 4px 7px;
+    border-radius: 10px;
+
+    @media (max-width: 768px) {
+     margin-left: 0.8rem;
+  }
 `;
